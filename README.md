@@ -100,22 +100,83 @@ const styles = StyleSheet.create({
 
 ## Props
 
-| Prop                        | Type                      | Description                                        |
-|-----------------------------|---------------------------|----------------------------------------------------|
-| `length`                    | `number`                  | The number of OTP digits.                          |
-| `keyboardType`              | `'numeric' or 'default'`  | The keyboard type for input.                       |
-| `isOtpIncorrect`            | `boolean`                 | Flag to indicate incorrect OTP styling.            |
-| `onOTPFilled`               | `(otp: string) => void`   | Callback when OTP is filled.                       |
-| `containerStyle`            | `ViewStyle`               | Style for the OTP container.                       |
-| `pinCodeContainerStyle`     | `ViewStyle`               | Style for each OTP input box.                      |
-| `pinCodeTextStyle`          | `TextStyle`               | Style for the OTP text.                            |
-| `focusedPinCodeContainerStyle` | `ViewStyle`            | Style when an OTP box is focused.                  |
-| `filledPinCodeContainerStyle`  | `ViewStyle`            | Style when an OTP box has a value.                 |
-| `autoFocus`                 | `boolean` (default: true) | Automatically focus the input on mount.            |
-| `highlighterColor`          | `ColorValue`              | Color for the input field highlighter.             |
-| `secureTextEntry`           | `boolean` (default: false | Obscures text for security.                        |
-| `disabled`                  | `boolean` (default: false)| Disables the input.                                |
-| ...                         | Other TextInput props     | Pass any other `TextInput` props as needed.        |
+<table>
+   <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td><code>length</code></td>
+      <td><code>number</code></td>
+      <td>The number of OTP digits.</td>
+   </tr>
+   <tr>
+      <td><code>keyboardType</code></td>
+      <td><code>'numeric' or 'default'</code></td>
+      <td>The keyboard type for input.</td>
+   </tr>
+   <tr>
+      <td><code>isOtpIncorrect</code></td>
+      <td><code>boolean</code></td>
+      <td>Flag to indicate incorrect OTP styling.</td>
+   </tr>
+   <tr>
+      <td><code>onOTPFilled</code></td>
+      <td><code>(otp: string) => void</code></td>
+      <td>Callback when OTP is filled.</td>
+   </tr>
+   <tr>
+      <td><code>containerStyle</code></td>
+      <td><code>ViewStyle</code></td>
+      <td>Style for the OTP container.</td>
+   </tr>
+   <tr>
+      <td><code>pinCodeContainerStyle</code></td>
+      <td><code>ViewStyle</code></td>
+      <td>Style for each OTP input box.</td>
+   </tr>
+   <tr>
+      <td><code>pinCodeTextStyle</code></td>
+      <td><code>TextStyle</code></td>
+      <td>Style for the OTP text.</td>
+   </tr>
+   <tr>
+      <td><code>focusedPinCodeContainerStyle</code></td>
+      <td><code>ViewStyle</code></td>
+      <td>Style when an OTP box is focused.</td>
+   </tr>
+   <tr>
+      <td><code>filledPinCodeContainerStyle</code></td>
+      <td><code>ViewStyle</code></td>
+      <td>Style when an OTP box has a value.</td>
+   </tr>
+   <tr>
+      <td><code>autoFocus</code></td>
+      <td><code>boolean</code> (default: true)</td>
+      <td>Automatically focus the input on mount.</td>
+   </tr>
+   <tr>
+      <td><code>highlighterColor</code></td>
+      <td><code>ColorValue</code></td>
+      <td>Color for the input field highlighter.</td>
+   </tr>
+   <tr>
+      <td><code>secureTextEntry</code></td>
+      <td><code>boolean</code> (default: false)</td>
+      <td>Obscures text for security.</td>
+   </tr>
+   <tr>
+      <td><code>disabled</code></td>
+      <td><code>boolean</code> (default: false)</td>
+      <td>Disables the input.</td>
+   </tr>
+   <tr>
+      <td>...</td>
+      <td>Other TextInput props</td>
+      <td>Pass any other <code>TextInput</code> props as needed.</td>
+   </tr>
+</table>
 
 
 ## Methods (Ref)
