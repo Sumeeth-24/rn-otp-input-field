@@ -15,7 +15,7 @@
 
 ## Installation
 
-Install `react-native-otp-input-field` using npm or yarn:
+Install `react-native-otp-ui-kit` using npm or yarn:
 
 ```bash
 npm install react-native-otp-ui-kit
