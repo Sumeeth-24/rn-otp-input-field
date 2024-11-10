@@ -1,50 +1,140 @@
-# Welcome to your Expo app 👋
+# react-native-otp-input-field
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+`react-native-otp-input-field` is a simple and highly customizable React Native component for entering OTP (One-Time Password) on iOS, Android, and Web. It provides an intuitive and user-friendly interface for inputting one-time passwords in your React Native applications.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Easy to Use**: Simple and efficient OTP input component.
+- **Highly Customizable**: Customize styling and behavior to match your app.
+- **Cross-Platform Support**: Works seamlessly with React Native, Expo, and React Native Web.
+- **TypeScript Support**: Fully typed for type safety and ease of development.
 
-   ```bash
-   npm install
-   ```
+## Installation
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Install `react-native-otp-input-field` using npm or yarn:
 
 ```bash
-npm run reset-project
-```
+npm install react-native-otp-input-field
+# or
+yarn add react-native-otp-input-field
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Usage
+Import the OtpInput component from react-native-otp-input-field:
 
-## Learn more
+import { OtpInput } from "react-native-otp-input-field";
 
-To learn more about developing your project with Expo, look at the following resources:
+Render the OtpInput component in your screen/component:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+typescript
+Copy code
+import { StyleSheet, View } from 'react-native';
+import React, { useRef, useState } from 'react';
+import OTPInput from './OTPInput';
+import { router } from 'expo-router';
 
-## Join the community
+const OTPField = () => {
+    const [isOtpIncorrect, setIsOtpIncorrect] = useState<boolean>(false);
+    const otpRef = useRef<{ clear: () => void }>(null);
 
-Join our community of developers creating universal apps.
+    const onOtpSubmit = (otp: string) => {
+        const correctOtp = "123456";
+        if (otp === correctOtp) {
+            console.log("Login Successful", otp);
+            setIsOtpIncorrect(false);
+            router.replace("/onboarding");
+        } else {
+            setIsOtpIncorrect(true);
+            otpRef.current?.clear();
+        }
+    };
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+    return (
+        <View>
+            <OTPInput
+                ref={otpRef}
+                length={6}
+                onOTPFilled={onOtpSubmit}
+                containerStyle={styles.container}
+                pinCodeContainerStyle={styles.otpContainer}
+                pinCodeTextStyle={styles.pinCodeText}
+                focusedPinCodeContainerStyle={styles.focusContainer}
+                filledPinCodeContainerStyle={styles.filledContainer}
+                keyboardType="numeric"
+                isOtpIncorrect={isOtpIncorrect}
+                highlighterColor="orange"
+                hideCursor={false}
+                autoFocus={true}
+                secureTextEntry={false}
+                disabled={false}
+            />
+        </View>
+    );
+};
+
+export default OTPField;
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop: 20,
+        gap: 2,
+        flexDirection: "row",
+        justifyContent: 'center',
+    },
+    otpContainer: {
+        width: 50,
+        height: 50,
+        margin: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: "#434343",
+        borderRadius: 15,
+    },
+    pinCodeText: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: "700",
+        color: "#FFFFFF",
+    },
+    focusContainer: {
+        borderColor: "blue",
+    },
+    filledContainer: {
+        backgroundColor: "#474747",
+    },
+});
+
+
+Props
+Prop	Type	Description
+length	number	The number of OTP digits.
+keyboardType	'numeric' or 'default'	The keyboard type for input.
+isOtpIncorrect	boolean	Flag to indicate incorrect OTP styling.
+onOTPFilled	(otp: string) => void	Callback when OTP is filled.
+containerStyle	ViewStyle	Style for the OTP container.
+pinCodeContainerStyle	ViewStyle	Style for each OTP input box.
+pinCodeTextStyle	TextStyle	Style for the OTP text.
+focusedPinCodeContainerStyle	ViewStyle	Style when an OTP box is focused.
+filledPinCodeContainerStyle	ViewStyle	Style when an OTP box has a value.
+autoFocus	boolean (default: true)	Automatically focus the input on mount.
+highlighterColor	ColorValue	Color for the input field highlighter.
+secureTextEntry	boolean (default: false)	Obscures text for security.
+disabled	boolean (default: false)	Disables the input.
+...	Other TextInput props	Pass any other TextInput props as needed.
+Methods (Ref)
+Method	Type	Description
+clear	() => void	Clears the OTP input.
+focus	() => void	Focuses the OTP input.
+setValue	(value: string) => void	Sets the OTP input value.
+Contributing
+Contributions are welcome! Please feel free to open issues or submit pull requests.
+
+If you find a bug or have any feature requests, please open an issue :)
+
+License
+This project is licensed under the MIT License.
+
+css
+Copy code
+
+Make sure to save the file with `.md` extension and restart VS Code if the preview isn’t updating properly.
