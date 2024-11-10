@@ -13,13 +13,15 @@
 
 Install `react-native-otp-input-field` using npm or yarn:
 
-
+```bash
 npm install react-native-otp-input-field
 # or
 yarn add react-native-otp-input-field
 
-Usage
 
+Usage
+typescript
+Copy code
 import { StyleSheet, View } from 'react-native';
 import React, { useRef, useState } from 'react';
 import { router } from 'expo-router';
@@ -43,7 +45,7 @@ const OTPField = () => {
 
     return (
         <View>
-            <OTPInput
+            <OtpInput
                 ref={otpRef}
                 length={6}
                 onOTPFilled={onOtpSubmit}
@@ -97,7 +99,6 @@ const styles = StyleSheet.create({
     },
 });
 
-
 ## Props
 
 | Prop                        | Type                      | Description                                        |
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
 | `setValue`     | `(value: string) => void`| Sets the OTP input value.     |
 
 
-#Contributing
+## Contributing
 Contributions are welcome! Please feel free to open issues or submit pull requests.
 
 If you find a bug or have any feature requests, please open an issue :)
