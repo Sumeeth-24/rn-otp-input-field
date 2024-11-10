@@ -20,8 +20,7 @@ yarn add react-native-otp-input-field
 
 
 Usage
-typescript
-Copy code
+
 import { StyleSheet, View } from 'react-native';
 import React, { useRef, useState } from 'react';
 import { router } from 'expo-router';
@@ -110,12 +109,12 @@ const styles = StyleSheet.create({
 | `containerStyle`            | `ViewStyle`               | Style for the OTP container.                       |
 | `pinCodeContainerStyle`     | `ViewStyle`               | Style for each OTP input box.                      |
 | `pinCodeTextStyle`          | `TextStyle`               | Style for the OTP text.                            |
-| `focusedPinCodeContainerStyle` | `ViewStyle`            | Style when an OTP box is focused.                   |
-| `filledPinCodeContainerStyle`  | `ViewStyle`            | Style when an OTP box has a value.                  |
+| `focusedPinCodeContainerStyle` | `ViewStyle`            | Style when an OTP box is focused.                  |
+| `filledPinCodeContainerStyle`  | `ViewStyle`            | Style when an OTP box has a value.                 |
 | `autoFocus`                 | `boolean` (default: true) | Automatically focus the input on mount.            |
 | `highlighterColor`          | `ColorValue`              | Color for the input field highlighter.             |
-| `secureTextEntry`           | `boolean` (default: false | Obscures text for security.                       |
-| `disabled`                  | `boolean` (default: false)| Disables the input.                               |
+| `secureTextEntry`           | `boolean` (default: false | Obscures text for security.                        |
+| `disabled`                  | `boolean` (default: false)| Disables the input.                                |
 | ...                         | Other TextInput props     | Pass any other `TextInput` props as needed.        |
 
 
