@@ -1,6 +1,6 @@
-# react-native-otp-input-field
+# react-native-otp-ui-kit
 
-`react-native-otp-input-field` is a simple and highly customizable React Native component for entering OTP (One-Time Password) on iOS, Android, and Web. It provides an intuitive and user-friendly interface for inputting one-time passwords in your React Native applications.
+`react-native-otp-ui-kit` is a simple and highly customizable React Native component for entering OTP (One-Time Password) on iOS, Android, and Web. It provides an intuitive and user-friendly interface for inputting one-time passwords in your React Native applications.
 
 ## Features
 
@@ -18,9 +18,9 @@
 Install `react-native-otp-input-field` using npm or yarn:
 
 ```bash
-npm install react-native-otp-input-field
+npm install react-native-otp-ui-kit
 # or
-yarn add react-native-otp-input-field
+yarn add react-native-otp-ui-kit
 
 
 Usage
@@ -28,7 +28,7 @@ Usage
 import { StyleSheet, View } from 'react-native';
 import React, { useRef, useState } from 'react';
 import { router } from 'expo-router';
-import { OtpInput } from "react-native-otp-input-field";
+import { OTPInput } from "react-native-otp-ui-kit";
 
 const OTPField = () => {
     const [isOtpIncorrect, setIsOtpIncorrect] = useState<boolean>(false);
@@ -48,7 +48,7 @@ const OTPField = () => {
 
     return (
         <View>
-            <OtpInput
+            <OTPInput
                 ref={otpRef}
                 length={6}
                 onOTPFilled={onOtpSubmit}
