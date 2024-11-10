@@ -13,24 +13,17 @@
 
 Install `react-native-otp-input-field` using npm or yarn:
 
-```bash
+
 npm install react-native-otp-input-field
 # or
 yarn add react-native-otp-input-field
 
 Usage
-Import the OtpInput component from react-native-otp-input-field:
 
-import { OtpInput } from "react-native-otp-input-field";
-
-Render the OtpInput component in your screen/component:
-
-typescript
-Copy code
 import { StyleSheet, View } from 'react-native';
 import React, { useRef, useState } from 'react';
-import OTPInput from './OTPInput';
 import { router } from 'expo-router';
+import { OtpInput } from "react-native-otp-input-field";
 
 const OTPField = () => {
     const [isOtpIncorrect, setIsOtpIncorrect] = useState<boolean>(false);
@@ -116,12 +109,12 @@ const styles = StyleSheet.create({
 | `containerStyle`            | `ViewStyle`               | Style for the OTP container.                       |
 | `pinCodeContainerStyle`     | `ViewStyle`               | Style for each OTP input box.                      |
 | `pinCodeTextStyle`          | `TextStyle`               | Style for the OTP text.                            |
-| `focusedPinCodeContainerStyle` | `ViewStyle`           | Style when an OTP box is focused.                  |
-| `filledPinCodeContainerStyle`  | `ViewStyle`           | Style when an OTP box has a value.                 |
+| `focusedPinCodeContainerStyle` | `ViewStyle`            | Style when an OTP box is focused.                   |
+| `filledPinCodeContainerStyle`  | `ViewStyle`            | Style when an OTP box has a value.                  |
 | `autoFocus`                 | `boolean` (default: true) | Automatically focus the input on mount.            |
 | `highlighterColor`          | `ColorValue`              | Color for the input field highlighter.             |
-| `secureTextEntry`           | `boolean` (default: false) | Obscures text for security.                        |
-| `disabled`                  | `boolean` (default: false) | Disables the input.                                |
+| `secureTextEntry`           | `boolean` (default: false | Obscures text for security.                       |
+| `disabled`                  | `boolean` (default: false)| Disables the input.                               |
 | ...                         | Other TextInput props     | Pass any other `TextInput` props as needed.        |
 
 
@@ -131,7 +124,7 @@ const styles = StyleSheet.create({
 |----------------|--------------------------|-------------------------------|
 | `clear`        | `() => void`             | Clears the OTP input.         |
 | `focus`        | `() => void`             | Focuses the OTP input.        |
-| `setValue`     | `(value: string) => void` | Sets the OTP input value.     |
+| `setValue`     | `(value: string) => void`| Sets the OTP input value.     |
 
 
 #Contributing
