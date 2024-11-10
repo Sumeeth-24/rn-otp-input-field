@@ -9,7 +9,7 @@
 - **Cross-Platform Support**: Works seamlessly with React Native, Expo, and React Native Web.
 - **TypeScript Support**: Fully typed for type safety and ease of development.
 
-##  Demo
+## Demo
 
 ![ScreenRecording2024-11-10120724-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/f5bb4ef4-9af1-46c1-befd-511b353b012d)
 
@@ -101,25 +101,26 @@ const styles = StyleSheet.create({
         backgroundColor: "#474747",
     },
 });
+```
 
 ## Props
 
-| Prop                        | Type                      | Description                                        |
-|-----------------------------|---------------------------|----------------------------------------------------|
-| `length`                    | `number`                  | The number of OTP digits.                          |
-| `keyboardType`              | `'numeric' or 'default'`  | The keyboard type for input.                       |
-| `isOtpIncorrect`            | `boolean`                 | Flag to indicate incorrect OTP styling.            |
-| `onOTPFilled`               | `(otp: string) => void`   | Callback when OTP is filled.                       |
-| `containerStyle`            | `ViewStyle`               | Style for the OTP container.                       |
-| `pinCodeContainerStyle`     | `ViewStyle`               | Style for each OTP input box.                      |
-| `pinCodeTextStyle`          | `TextStyle`               | Style for the OTP text.                            |
-| `focusedPinCodeContainerStyle` | `ViewStyle`            | Style when an OTP box is focused.                  |
-| `filledPinCodeContainerStyle`  | `ViewStyle`            | Style when an OTP box has a value.                 |
-| `autoFocus`                 | `boolean` (default: true) | Automatically focus the input on mount.            |
-| `highlighterColor`          | `ColorValue`              | Color for the input field highlighter.             |
-| `secureTextEntry`           | `boolean` (default: false | Obscures text for security.                        |
-| `disabled`                  | `boolean` (default: false)| Disables the input.                                |
-| ...                         | Other TextInput props     | Pass any other `TextInput` props as needed.        |
+| Prop                           | Type                      |    Description                                     |
+|-----------------------------   |---------------------------|----------------------------------------------------|
+| `length`                       | `number`                  | The number of OTP digits.                          |
+| `keyboardType`                 | `'numeric' or 'default'`  | The keyboard type for input.                       |
+| `isOtpIncorrect`               | `boolean`                 | Flag to indicate incorrect OTP styling.            |
+| `onOTPFilled`                  | `(otp: string) => void`   | Callback when OTP is filled.                       |
+| `containerStyle`               | `ViewStyle`               | Style for the OTP container.                       |
+| `pinCodeContainerStyle`        | `ViewStyle`               | Style for each OTP input box.                      |
+| `pinCodeTextStyle`             | `TextStyle`               | Style for the OTP text.                            |
+| `focusedPinCodeContainerStyle` | `ViewStyle`               | Style when an OTP box is focused.                  |
+| `filledPinCodeContainerStyle`  | `ViewStyle`               | Style when an OTP box has a value.                 |
+| `autoFocus`                    | `boolean` (default: true) | Automatically focus the input on mount.            |
+| `highlighterColor`             | `ColorValue`              | Color for the input field highlighter.             |
+| `secureTextEntry`              | `boolean` (default: false | Obscures text for security.                        |
+| `disabled`                     | `boolean` (default: false)| Disables the input.                                |
+| ...                            | Other TextInput props     | Pass any other `TextInput` props as needed.        |
 
 
 ## Methods (Ref)
@@ -135,3 +136,8 @@ const styles = StyleSheet.create({
 Contributions are welcome! Please feel free to open issues or submit pull requests.
 
 If you find a bug or have any feature requests, please open an issue :)
+
+## Support Me
+
+If you find this project useful, consider giving it a star ⭐ and helping it grow! Contribute to making this the ultimate one-stop OTP solution. Your contributions and feedback are highly appreciated!
+
