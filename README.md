@@ -105,36 +105,36 @@ const styles = StyleSheet.create({
 });
 
 
-Props
-Prop	Type	Description
-length	number	The number of OTP digits.
-keyboardType	'numeric' or 'default'	The keyboard type for input.
-isOtpIncorrect	boolean	Flag to indicate incorrect OTP styling.
-onOTPFilled	(otp: string) => void	Callback when OTP is filled.
-containerStyle	ViewStyle	Style for the OTP container.
-pinCodeContainerStyle	ViewStyle	Style for each OTP input box.
-pinCodeTextStyle	TextStyle	Style for the OTP text.
-focusedPinCodeContainerStyle	ViewStyle	Style when an OTP box is focused.
-filledPinCodeContainerStyle	ViewStyle	Style when an OTP box has a value.
-autoFocus	boolean (default: true)	Automatically focus the input on mount.
-highlighterColor	ColorValue	Color for the input field highlighter.
-secureTextEntry	boolean (default: false)	Obscures text for security.
-disabled	boolean (default: false)	Disables the input.
-...	Other TextInput props	Pass any other TextInput props as needed.
-Methods (Ref)
-Method	Type	Description
-clear	() => void	Clears the OTP input.
-focus	() => void	Focuses the OTP input.
-setValue	(value: string) => void	Sets the OTP input value.
-Contributing
+## Props
+
+| Prop                        | Type                      | Description                                        |
+|-----------------------------|---------------------------|----------------------------------------------------|
+| `length`                    | `number`                  | The number of OTP digits.                          |
+| `keyboardType`              | `'numeric' or 'default'`  | The keyboard type for input.                       |
+| `isOtpIncorrect`            | `boolean`                 | Flag to indicate incorrect OTP styling.            |
+| `onOTPFilled`               | `(otp: string) => void`   | Callback when OTP is filled.                       |
+| `containerStyle`            | `ViewStyle`               | Style for the OTP container.                       |
+| `pinCodeContainerStyle`     | `ViewStyle`               | Style for each OTP input box.                      |
+| `pinCodeTextStyle`          | `TextStyle`               | Style for the OTP text.                            |
+| `focusedPinCodeContainerStyle` | `ViewStyle`           | Style when an OTP box is focused.                  |
+| `filledPinCodeContainerStyle`  | `ViewStyle`           | Style when an OTP box has a value.                 |
+| `autoFocus`                 | `boolean` (default: true) | Automatically focus the input on mount.            |
+| `highlighterColor`          | `ColorValue`              | Color for the input field highlighter.             |
+| `secureTextEntry`           | `boolean` (default: false) | Obscures text for security.                        |
+| `disabled`                  | `boolean` (default: false) | Disables the input.                                |
+| ...                         | Other TextInput props     | Pass any other `TextInput` props as needed.        |
+
+
+## Methods (Ref)
+
+| Method         | Type                     | Description                   |
+|----------------|--------------------------|-------------------------------|
+| `clear`        | `() => void`             | Clears the OTP input.         |
+| `focus`        | `() => void`             | Focuses the OTP input.        |
+| `setValue`     | `(value: string) => void` | Sets the OTP input value.     |
+
+
+#Contributing
 Contributions are welcome! Please feel free to open issues or submit pull requests.
 
 If you find a bug or have any feature requests, please open an issue :)
-
-License
-This project is licensed under the MIT License.
-
-css
-Copy code
-
-Make sure to save the file with `.md` extension and restart VS Code if the preview isn’t updating properly.
