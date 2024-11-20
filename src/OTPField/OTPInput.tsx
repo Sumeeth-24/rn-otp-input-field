@@ -1,7 +1,6 @@
 import React, { forwardRef, useImperativeHandle } from 'react';
 import { TextInput, View, ViewStyle } from 'react-native';
 import { OtpInputProps } from './OTPInputProps';
-import { OTPInputStyles } from './OTPInputStyles';
 import { useOtpInput } from './useOTPInput';
 
 
@@ -12,6 +11,8 @@ const OTPInput = forwardRef((props: OtpInputProps, ref) => {
     inputRefs,
     actions: { handleTextChange, handleFocus, handleBlur, handleKeyDown, clear },
   } = useOtpInput(props);
+
+  const { initialPlaceHolder } = props;
 
   // Use ref to expose the clear function
   useImperativeHandle(ref, () => ({
@@ -30,7 +31,7 @@ const OTPInput = forwardRef((props: OtpInputProps, ref) => {
             focusedIndex === index && props.focusedPinCodeContainerStyle,
             value ? (props.filledPinCodeContainerStyle as ViewStyle) : undefined,
             props.disabled && { opacity: 0.5 },
-            props.isOtpIncorrect && OTPInputStyles.incorrectPinCodeContainerStyle 
+            props.isOtpIncorrect && props.incorrectPinCodeContainerStyle 
           ]}
         >
           <TextInput
@@ -41,6 +42,8 @@ const OTPInput = forwardRef((props: OtpInputProps, ref) => {
             onKeyPress={(e) => handleKeyDown(index, e)}
             onFocus={() => handleFocus(index)}
             onBlur={handleBlur}
+            placeholder={initialPlaceHolder?.toString()}
+            placeholderTextColor={props.placeholderTextColor}
             style={[
               props.pinCodeTextStyle,
               props.disabled && { color: '#555555' },

@@ -9,6 +9,7 @@ interface UseOtpInputProps extends OtpInputProps {
 
 export const useOtpInput = ({
     length,
+    onCodeChanged,
     onOTPFilled,
     disabled = false,
     autoFocus = true,
@@ -32,6 +33,11 @@ export const useOtpInput = ({
       setOtp(newOtp);
   
       const combinedOtp = newOtp.join('');
+
+      if (onCodeChanged) {
+        onCodeChanged(combinedOtp);
+      }
+
       if (combinedOtp.length === length && onOTPFilled) {
         onOTPFilled(combinedOtp);
       }

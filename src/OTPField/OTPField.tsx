@@ -1,43 +1,63 @@
-import { StyleSheet, View } from 'react-native'
+import { Button, StyleSheet, View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import OTPInput from './OTPInput'
 import { router } from 'expo-router';
 
 const OTPField = () => {
     const [isOtpIncorrect, setIsOtpIncorrect] = useState<boolean>(false);
+    const [code, setCode] = useState<string>('');
     const otpRef = useRef<{ clear: () => void }>(null);
 
-    const onOtpSubmit = (otp: string) => {
+    const onChangeOTP = (e: string) => {
+        setCode(e);
+    }
+
+    const verifyChallenge = (value: string) => {
         const correctOtp = "123456";
-        if(otp === correctOtp){
-            console.log("Login Successful", otp);
+        if(value === correctOtp){
             setIsOtpIncorrect(false);
-            router.replace("/onboarding");
+            // YOUR logic code goes here
+            router.navigate('/onboarding')
         } else {
             setIsOtpIncorrect(true);
             otpRef.current?.clear(); // Clear OTP input if incorrect
         }
     }
 
+    const handleAutomaticVerification = (otp: string) => {
+            verifyChallenge(otp);
+     }
+
+    const handleManualVerification = () => {
+        verifyChallenge(code);   
+      };
+
   return (
     <View>
       <OTPInput
         ref={otpRef}
         length={6}
-        onOTPFilled={onOtpSubmit}
+        initialPlaceHolder={''}
+        onCodeChanged={onChangeOTP}
+        onOTPFilled={handleAutomaticVerification}
         containerStyle={styles.container}
+        placeholderTextColor="blue"
         pinCodeContainerStyle={styles.otpContainer}
         pinCodeTextStyle={styles.pinCodeText}
         focusedPinCodeContainerStyle={styles.focusContainer}
         filledPinCodeContainerStyle={styles.filledContainer}
+        incorrectPinCodeContainerStyle={styles.incorrectPinCodeContainerStyle}
         keyboardType="numeric"
         isOtpIncorrect={isOtpIncorrect}
         highlighterColor="orange"
-        hideCursor={false}
+        hideCursor={true}
         autoFocus={true}
         secureTextEntry={false}
         disabled={false}
       />
+
+        <Button title="Verify OTP" onPress={handleManualVerification} />
+
     </View>
   )
 }
@@ -63,12 +83,16 @@ const styles = StyleSheet.create({
     },
     pinCodeText: {
         textAlign: 'center',
-        fontSize: 20,
-        fontWeight: "700",
-        color: "#FFFFFF",
+        fontSize: 15,
+        fontWeight: "400",
+        color: "#D2D2D2",
     },
     focusContainer: {
         borderColor: "blue",
     },
-    filledContainer: {backgroundColor: "#474747"}
+    filledContainer: {backgroundColor: "#474747"},
+    incorrectPinCodeContainerStyle: {
+        borderColor: 'red',
+        borderWidth: 1,
+      },
 })
